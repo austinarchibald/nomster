@@ -1,28 +1,9 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Nomster: Yelp Clone App
 
-Things you may want to cover:
+via {theFirehoseProject Bootcamp}[http://thefirehoseproject.com]
 
-* Ruby version
+Integrate with the Google Map API, transform addresses into coordinates and place pins on maps. Launch user authentication, star ratings, automated email notifications, and user comment features. Build a user dashboard, display analytics and learn front-end fundamentals of mobile first design
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+View it live at {Heroku}[#].
