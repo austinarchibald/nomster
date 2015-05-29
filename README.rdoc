@@ -6,4 +6,4 @@ via {theFirehoseProject Bootcamp}[http://thefirehoseproject.com]
 
 Integrate with the Google Map API, transform addresses into coordinates and place pins on maps. Launch user authentication, star ratings, automated email notifications, and user comment features. Build a user dashboard, display analytics and learn front-end fundamentals of mobile first design
 
-View it live at {Heroku}[#].
+View it live at {Heroku}[http://nomster-austin.herokuapp.com].

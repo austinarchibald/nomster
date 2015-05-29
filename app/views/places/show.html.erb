@@ -1,5 +1,12 @@
+<!-- <% rating_integers = [] %>
+<% @place.comments.each do |c| %>
+<%= rating_integers << c.rating[0].to_i %>
+<% rating_integers %>
+<% end %> -->
+
+
 <div class="booyah box col-xs-10 col-xs-offset-1">
-  <h1><%= @place.name %> </h1>
+  <h1><%= @place.name %></h1>
   <i><%= @place.address %></i>
   <br/><br/>
   <p><%= @place.description %></p>
