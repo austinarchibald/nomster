@@ -27,11 +27,11 @@ body {
 	margin-bottom:0;
 }
 
-.navbar-inverse .navbar-brand {
- 	color: #E3E85A;
-	font-family: "Helvetica Neue", Helvetica, sans-serif;
-  	font-weight: 600;
+.navbar-inverse a.navbar-brand {
+	font-family: 'Brush Script MT', cursive, sans-serif;
+	color: red;
   	letter-spacing: -0.3px;
+  	font-size: 35px;
 }
 
 .pagination {
