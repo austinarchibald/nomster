@@ -10,25 +10,25 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <%= image_tag 'slider1.jpg' %>
+      <%= image_tag 'slider1.jpg', :class => 'img-responsive' %>
       <div class="carousel-caption">
         Welcome to Pizza Heaven
       </div>
     </div>
     <div class="item">
-      <%= image_tag 'slider2.jpg' %>
+      <%= image_tag 'slider2.jpg', :class => 'img-responsive' %>
       <div class="carousel-caption">
         The Best Pizzerias in the World
       </div>
     </div>
     <div class="item">
-      <%= image_tag 'slider3.jpg' %>
+      <%= image_tag 'slider3.jpg', :class => 'img-responsive' %>
       <div class="carousel-caption">
         The Very Best
       </div>
     </div>
     <div class="item">
-      <%= image_tag 'slider4.jpg' %>
+      <%= image_tag 'slider4.jpg', :class => 'img-responsive' %>
       <div class="carousel-caption">
         Prepared by the Best
       </div>
@@ -42,10 +42,6 @@
   <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
-</div>
-
-<div class="pagination col-xs-10 col-xs-offset-1">
-  <%= will_paginate @places, renderer: BootstrapPagination::Rails, previous_label: "Previous", next_label: "Next", inner_window: 2, outer_window: 0 %>
 </div>
 
 <% @places.each do |place| %>
@@ -77,3 +73,6 @@
   </div>
 <% end %>
 
+<div class="pagination col-xs-10 col-xs-offset-1">
+  <%= will_paginate @places, renderer: BootstrapPagination::Rails, previous_label: "Previous", next_label: "Next", inner_window: 2, outer_window: 0 %>
+</div>

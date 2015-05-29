@@ -24,6 +24,7 @@ body {
 	background: url('/assets/congruent_outline.png');
 	border-radius: 0;
 	box-shadow: 0px 1px 3px #2a2a2a;
+	margin-bottom:0;
 }
 
 .navbar-inverse .navbar-brand {
@@ -71,6 +72,24 @@ blockquote p {
   display: inline;
 }
 
-.img-responsive {
+.carousel-inner {
+    height: 550px;
+    width: 100%;
+}
 
+.carousel-caption {
+    font-family: 'Garamond', Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight:100;
+    text-shadow: rgba(0,0,0,0.95) 2px 2px;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+    position: relative;
+    margin-bottom: 100px;
+    vertical-align: 0;
+
+}
+
+.carousel {
+  box-shadow: 0px 3px 8px #2a2a2a;
 }
