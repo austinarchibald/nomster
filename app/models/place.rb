@@ -9,6 +9,6 @@ class Place < ActiveRecord::Base
   validates :description, :presence => true
 
   # def avg_rating
-  #   Comment.where(:place_id => @place).where("rating")
+  #   Comment.where(:place_id => @place).average(:rating)
   # end
 end
