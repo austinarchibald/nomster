@@ -1,9 +1,10 @@
 <!-- <% rating_integers = [] %>
 <% @place.comments.each do |c| %>
-<%= rating_integers << c.rating[0].to_i %>
-<% rating_integers %>
-<% end %> -->
+<% rating_integers << c.rating[0].to_i %>
+<% end %>
 
+
+<h6>Average Rating: <%= rating_integers.sum.to_f / rating_integers.length %></h6> -->
 
 <div class="booyah box col-xs-10 col-xs-offset-1">
   <h1><%= @place.name %></h1>

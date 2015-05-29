@@ -21,6 +21,15 @@ class Comment < ActiveRecord::Base
       NotificationMailer.comment_added(self).deliver
   end
 
+  # def avg_rating
+  #   rating_vals = []
+  #   Comment.where(:place_id => @place).each do |c|
+  #     rating_vals << c.rating.to_i
+  #   end
+
+  #   rating_vals.sum.to_f / rating_vals.length
+  # end
+
 end
 
 

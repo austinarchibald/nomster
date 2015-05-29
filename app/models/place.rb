@@ -9,11 +9,11 @@ class Place < ActiveRecord::Base
   validates :description, :presence => true
 
   # def avg_rating
-  #   rating_vals = []
-  #   Comment.where(:place_id => @place).each do |c|
-  #       rating_vals << c.rating[0].to_f
+  #   rating_integers = []
+  #   Place.comments.each do |c|
+  #     rating_integers << c.rating[0].to_i
   #   end
 
-  #   rating_vals.sum.to_f / rating_vals.length
+  # rating_integers.sum.to_f / rating_integers.length
   # end
 end
