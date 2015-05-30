@@ -44,6 +44,52 @@
   </a>
 </div>
 
+<!-- Google Maps Multiple Markers Index 
+See http://stackoverflow.com/questions/3059044/google-maps-js-api-v3-simple-multiple-marker-example -->
+
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+  <h1 class="text-center">All Locations</h1>
+  <div id="map" style="width: 840px; height: 400px;"></div>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script type="text/javascript">
+    var locations = [
+      <% @places.each do |place| %>
+        <% if place == @places.last %>
+        ['<%= link_to place.name, place_path(place) %> (<%= place.avg_rating %>)<br/><%= place.description %><br/><br/>Most recent review:<br/>"<%= place.comments.last.message %>"-<%= place.comments.last.user.email %>', <%= place.latitude %>, <%= place.longitude %>, 4]
+        <% else %>
+        ['<%= link_to place.name, place_path(place) %> (<%= place.avg_rating %>)<br/><%= place.description %><br/><br/>Most recent review:<br/>"<%= place.comments.last.message %>"-<%= place.comments.last.user.email %>', <%= place.latitude %>, <%= place.longitude %>, 4],
+        <% end %>
+      <% end %>
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: new google.maps.LatLng(39.442592, -92.793955),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        icon: '/assets/pizza.png'
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+
+</div>
+
 <% @places.each do |place| %>
   <div class="booyah-box col-xs-10 col-xs-offset-1">
     <div class="col-xs-6">
