@@ -24,7 +24,7 @@
     <div class="item">
       <%= image_tag 'slider3.jpg', :class => 'img-responsive' %>
       <div class="carousel-caption">
-        The Very Best
+        Only the Best
       </div>
     </div>
     <div class="item">
@@ -55,9 +55,9 @@ See http://stackoverflow.com/questions/3059044/google-maps-js-api-v3-simple-mult
     var locations = [
       <% @places.each do |place| %>
         <% if place == @places.last %>
-        ['<b><%= link_to place.name, place_path(place) %></b> (<%= place.avg_rating %>)<br/><i><%= place.description %></i><br/><br/>Most recent review:<br/>"<%= place.comments.last.message %>"-<%= place.comments.last.user.email %>', <%= place.latitude %>, <%= place.longitude %>, 4]
+        ['<b><%= link_to place.name, place_path(place) %></b> (<%= place.avg_rating %>)<br/><i><%= place.description %></i>', <%= place.latitude %>, <%= place.longitude %>, 4]
         <% else %>
-        ['<b><%= link_to place.name, place_path(place) %></b> (<%= place.avg_rating %>)<br/><i><%= place.description %></i><br/><br/>Most recent review:<br/>"<%= place.comments.last.message %>"-<%= place.comments.last.user.email %>', <%= place.latitude %>, <%= place.longitude %>, 4],
+        ['<b><%= link_to place.name, place_path(place) %></b> (<%= place.avg_rating %>)<br/><i><%= place.description %></i> %>', <%= place.latitude %>, <%= place.longitude %>, 4],
         <% end %>
       <% end %>
     ];
