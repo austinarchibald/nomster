@@ -20,7 +20,7 @@
       };
       var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-      var contentString = '<b><%= @place.name %></b> (<%= @place.avg_rating %>)<br/><i><%= @place.description %></i><br/><br/>Most recent review:<br/>"<%= @place.comments.last.message %>"'; 
+      var contentString = '<b><%= @place.name %></b> (<%= @place.avg_rating %>)<br/><i><%= @place.description %></i> %>"'; 
 
       var infowindow = new google.maps.InfoWindow({
       content: contentString
