@@ -57,7 +57,7 @@ See http://stackoverflow.com/questions/3059044/google-maps-js-api-v3-simple-mult
         <% if place == @places.last %>
         ['<b><%= link_to place.name, place_path(place) %></b> (<%= place.avg_rating %>)<br/><i><%= place.description %></i>', <%= place.latitude %>, <%= place.longitude %>, 4]
         <% else %>
-        ['<b><%= link_to place.name, place_path(place) %></b> (<%= place.avg_rating %>)<br/><i><%= place.description %></i> %>', <%= place.latitude %>, <%= place.longitude %>, 4],
+        ['<b><%= link_to place.name, place_path(place) %></b> (<%= place.avg_rating %>)<br/><i><%= place.description %></i>', <%= place.latitude %>, <%= place.longitude %>, 4],
         <% end %>
       <% end %>
     ];
