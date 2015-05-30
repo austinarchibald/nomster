@@ -12,7 +12,7 @@ class PlacesController < ApplicationController
   def create
     @place = current_user.places.create(place_params)
     if @place.valid?
-      redirect_to root_path
+      redirect_to place_path(Place.last)
     else
       render :new, :status => :unprocessable_entity
     end
@@ -38,7 +38,7 @@ class PlacesController < ApplicationController
     end
     @place.update_attributes(place_params)
     if @place.valid?
-      redirect_to root_path
+      redirect_to place_path(Place.last)
     else
       render :new, :status => :unprocessable_entity
     end
