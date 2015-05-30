@@ -3,14 +3,14 @@ class Comment < ActiveRecord::Base
   belongs_to :place
   after_create :send_comment_email
 
-  @@star = '&#9733'.html_safe
+  STAR = '&#9733'.html_safe
 
   RATINGS = {
-    @@star                                      => '1_star',
-    @@star + @@star                             => '2_stars',
-    @@star + @@star + @@star                    => '3_stars',
-    @@star + @@star + @@star + @@star           => '4_stars',
-    @@star + @@star + @@star + @@star + @@star  => '5_stars'
+    STAR                              => '1_star',
+    STAR + STAR                       => '2_stars',
+    STAR + STAR + STAR                => '3_stars',
+    STAR + STAR + STAR + STAR         => '4_stars',
+    STAR + STAR + STAR + STAR + STAR  => '5_stars'
   }
 
   def humanized_rating
@@ -20,16 +20,6 @@ class Comment < ActiveRecord::Base
   def send_comment_email
       NotificationMailer.comment_added(self).deliver
   end
-
-  # def avg_rating
-  #   rating_vals = []
-  #   Comment.where(:place_id => @place).each do |c|
-  #     rating_vals << c.rating.to_i
-  #   end
-
-  #   rating_vals.sum.to_f / rating_vals.length
-  # end
-
 end
 
 

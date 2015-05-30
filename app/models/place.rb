@@ -8,12 +8,33 @@ class Place < ActiveRecord::Base
   validates :address, :presence => true
   validates :description, :presence => true
 
-  # def avg_rating
-  #   rating_integers = []
-  #   Place.comments.each do |c|
-  #     rating_integers << c.rating[0].to_i
-  #   end
+  HALF = '&#189'.html_safe
 
-  # rating_integers.sum.to_f / rating_integers.length
-  # end
+  def avg_rating
+    rating_vals = self.comments.map do |c|
+        c.rating.to_i
+    end
+    r = rating_vals.sum.to_f / rating_vals.length
+    if r >= 4.75
+      avg_rating = Comment::STAR + Comment::STAR + Comment::STAR + Comment::STAR + Comment::STAR
+    elsif r >= 4.25
+      avg_rating = Comment::STAR + Comment::STAR + Comment::STAR + Comment::STAR + HALF
+    elsif r >= 3.75
+      avg_rating = Comment::STAR + Comment::STAR + Comment::STAR + Comment::STAR
+    elsif r >= 3.25 
+      avg_rating = Comment::STAR + Comment::STAR + Comment::STAR + HALF
+    elsif r >= 2.75
+      avg_rating = Comment::STAR + Comment::STAR + Comment::STAR
+    elsif r >= 2.25
+      avg_rating = Comment::STAR + Comment::STAR + HALF
+    elsif r >= 1.75
+      avg_rating = Comment::STAR + Comment::STAR
+    elsif r >= 1.25
+      avg_rating = Comment::STAR + HALF
+    elsif r >= 0.75
+      avg_rating = Comment::STAR
+    elsif r >= 0.25
+      avg_rating = HALF
+    end
+  end
 end
